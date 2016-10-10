@@ -1,0 +1,30 @@
+# build an elixir runtime
+nanobox build
+
+# create a development environment
+nanobox dev deploy
+
+# console into the dev env
+nanobox dev console
+
+# install phoenix
+mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
+
+# generate the project and copy it in
+cd /tmp
+mix phoenix.new myapp --no-brunch --no-ecto
+cp -a /tmp/myapp/* /app
+cd -
+
+# add inotify as dependency
+
+
+# update port to 8080
+config/dev.exs
+config/prod.exs
+
+# fetch deps
+mix deps.get
+
+# run phoenix
+mix phoenix.server
