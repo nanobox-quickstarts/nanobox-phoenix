@@ -11,9 +11,6 @@ git clone https://github.com/nanobox-quickstarts/nanobox-phoenix.git
 # cd into the phoenix app
 cd nanobox-phoenix
 
-# build a elixir runtime
-nanobox build
-
 # start the dev environment
 nanobox dev start
 
