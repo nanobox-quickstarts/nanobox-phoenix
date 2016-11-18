@@ -1,30 +1,49 @@
-# Phoenix with Nanobox
-This is the companion application for the [Phoenix: Getting Started](https://guides.nanobox.io/elixir/phoenix/) guide on [guides.nanobox.io](https://guides.nanobox.io) and is pre-configured and ready to run with [nanobox](https://nanobox.io/)!
+![Phoenix from scratch](https://guides.nanobox.io/assets/quickstart-icons/phoenix.png)
 
-## Up and Running
+#### Clone the repo
 
-``` bash
-
+```bash
 # clone the code
 git clone https://github.com/nanobox-quickstarts/nanobox-phoenix.git
 
 # cd into the phoenix app
 cd nanobox-phoenix
-
-# start the dev environment
-nanobox dev start
-
-# add a convenient way to access your app from the browser
-nanobox dev dns add phoenix.nanobox.dev
-
-# console into the dev environment
-nanobox dev console
-
-# run the application
-mix phoenix.server
 ```
 
-Visit the app from your favorite browser at: `phoenix.nanobox.dev:8080`
+#### Run the app
 
-## Now What?
-For more details about how this works or for more advanced topics related to running Phoenix applications with nanobox visit [guides.nanobox.io/elixir/phoenix/](https://guides.nanobox.io/elixir/phoenix/)
+```bash
+nanobox run mix phoenix.server
+```
+
+#### Check it out
+
+```bash
+# Add a convenient way to access your app from the browser
+nanobox dns add local phoenix.dev
+```
+
+Visit your app at <a href="http://phoenix.dev" target="\_blank">phoenix.dev</a>
+
+#### Explore
+With Nanobox, you have everything you need develop and run your phoenix app:
+
+```bash
+# drop into a Nanobox console
+nanobox run
+
+# where php is installed,
+elixir -v
+
+# your packages are available,
+mix list
+
+# and your code is mounted
+ls
+
+# exit the console
+exit
+```
+
+#### Now What?
+For more details about running phoenix apps with nanobox visit [guides.nanobox.io/php/phoenix/](https://guides.nanobox.io/php/phoenix/)
