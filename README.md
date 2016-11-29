@@ -1,6 +1,13 @@
 ![Phoenix from scratch](https://guides.nanobox.io/assets/quickstart-icons/phoenix.png)
 
-#### Clone the repo
+# Phoenix from scratch
+
+Run a Phoenix app locally, install nothing besides nanobox. 
+
+<a href="https://nanobox.io/download"><img src="https://guides.nanobox.io/assets/quickstart-icons/download.png" /></a>
+
+
+## Clone the repo
 
 ```bash
 # clone the code
@@ -10,13 +17,13 @@ git clone https://github.com/nanobox-quickstarts/nanobox-phoenix.git
 cd nanobox-phoenix
 ```
 
-#### Run the app
+## Run the app
 
 ```bash
 nanobox run mix phoenix.server
 ```
 
-#### Check it out
+## Check it out
 
 ```bash
 # Add a convenient way to access your app from the browser
@@ -25,7 +32,7 @@ nanobox dns add local phoenix.dev
 
 Visit your app at <a href="http://phoenix.dev" target="\_blank">phoenix.dev</a>
 
-#### Explore
+## Explore
 With Nanobox, you have everything you need develop and run your phoenix app:
 
 ```bash
@@ -45,5 +52,7 @@ ls
 exit
 ```
 
-#### Now What?
+## Now What?
 For more details about running phoenix apps with nanobox visit [guides.nanobox.io/php/phoenix/](https://guides.nanobox.io/php/phoenix/)
+
+<a href="https://nanobox.io"><img src="https://guides.nanobox.io/assets/quickstart-icons/footer.png" /></a>
