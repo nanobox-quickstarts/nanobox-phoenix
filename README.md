@@ -53,6 +53,6 @@ exit
 ```
 
 ## Now What?
-For more details about running phoenix apps with nanobox visit [guides.nanobox.io/php/phoenix/](https://guides.nanobox.io/php/phoenix/)
+For more details about running phoenix apps with nanobox visit [guides.nanobox.io/elixir/phoenix/](https://guides.nanobox.io/elixir/phoenix/)
 
 <a href="https://nanobox.io"><img src="https://guides.nanobox.io/assets/quickstart-icons/footer.png" /></a>
