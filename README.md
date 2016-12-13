@@ -39,7 +39,7 @@ With Nanobox, you have everything you need develop and run your phoenix app:
 # drop into a Nanobox console
 nanobox run
 
-# where php is installed,
+# where elixir is installed,
 elixir -v
 
 # your packages are available,
