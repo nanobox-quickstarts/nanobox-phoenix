@@ -1,2 +1,5 @@
 run.config:
   engine: elixir
+
+  dev_packages:
+    - inotify-tools
