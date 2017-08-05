@@ -1,5 +1,5 @@
-defmodule Myapp.PageController do
-  use Myapp.Web, :controller
+defmodule MyappWeb.PageController do
+  use MyappWeb, :controller
 
   def index(conn, _params) do
     render conn, "index.html"

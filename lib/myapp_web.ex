@@ -1,39 +1,35 @@
-defmodule Myapp.Web do
+defmodule MyappWeb do
   @moduledoc """
-  A module that keeps using definitions for controllers,
-  views and so on.
+  The entrypoint for defining your web interface, such
+  as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use Myapp.Web, :controller
-      use Myapp.Web, :view
+      use MyappWeb, :controller
+      use MyappWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
   on imports, uses and aliases.
 
   Do NOT define functions inside the quoted expressions
-  below.
+  below. Instead, define any helper function in modules
+  and import those modules here.
   """
-
-  def model do
-    quote do
-      # Define common model functionality
-    end
-  end
 
   def controller do
     quote do
-      use Phoenix.Controller
-
-      import Myapp.Router.Helpers
-      import Myapp.Gettext
+      use Phoenix.Controller, namespace: MyappWeb
+      import Plug.Conn
+      import MyappWeb.Router.Helpers
+      import MyappWeb.Gettext
     end
   end
 
   def view do
     quote do
-      use Phoenix.View, root: "web/templates"
+      use Phoenix.View, root: "lib/myapp_web/templates",
+                        namespace: MyappWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1]
@@ -41,22 +37,24 @@ defmodule Myapp.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import Myapp.Router.Helpers
-      import Myapp.ErrorHelpers
-      import Myapp.Gettext
+      import MyappWeb.Router.Helpers
+      import MyappWeb.ErrorHelpers
+      import MyappWeb.Gettext
     end
   end
 
   def router do
     quote do
       use Phoenix.Router
+      import Plug.Conn
+      import Phoenix.Controller
     end
   end
 
   def channel do
     quote do
       use Phoenix.Channel
-      import Myapp.Gettext
+      import MyappWeb.Gettext
     end
   end
 

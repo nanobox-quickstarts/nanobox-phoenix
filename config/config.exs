@@ -6,10 +6,10 @@
 use Mix.Config
 
 # Configures the endpoint
-config :myapp, Myapp.Endpoint,
+config :myapp, MyappWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "1Gcuu07nY0sMhJARUWd8LhV9r/+H4Iyu1DPbazQfiDGW8H4iUOBRhwN389VdPDlz",
-  render_errors: [view: Myapp.ErrorView, accepts: ~w(html json)],
+  render_errors: [view: MyappWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Myapp.PubSub,
            adapter: Phoenix.PubSub.PG2]
 

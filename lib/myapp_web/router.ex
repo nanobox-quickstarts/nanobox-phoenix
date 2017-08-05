@@ -1,5 +1,5 @@
-defmodule Myapp.Router do
-  use Myapp.Web, :router
+defmodule MyappWeb.Router do
+  use MyappWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,7 +13,7 @@ defmodule Myapp.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", Myapp do
+  scope "/", MyappWeb do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index

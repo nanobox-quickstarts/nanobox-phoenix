@@ -1,7 +1,7 @@
-defmodule Myapp.Endpoint do
+defmodule MyappWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :myapp
 
-  socket "/socket", Myapp.UserSocket
+  socket "/socket", MyappWeb.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -38,5 +38,20 @@ defmodule Myapp.Endpoint do
     key: "_myapp_key",
     signing_salt: "sANahOuP"
 
-  plug Myapp.Router
+  plug MyappWeb.Router
+
+  @doc """
+  Callback invoked for dynamically configuring the endpoint.
+
+  It receives the endpoint configuration and checks if
+  configuration should be loaded from the system environment.
+  """
+  def init(_key, config) do
+    if config[:load_from_system_env] do
+      port = System.get_env("PORT") || raise "expected the PORT environment variable to be set"
+      {:ok, Keyword.put(config, :http, [:inet6, port: port])}
+    else
+      {:ok, config}
+    end
+  end
 end
