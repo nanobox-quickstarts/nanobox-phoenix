@@ -8,11 +8,11 @@ nanobox dev deploy
 nanobox dev console
 
 # install phoenix
-mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
+mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez
 
 # generate the project and copy it in
 cd /tmp
-mix phoenix.new myapp --no-brunch --no-ecto
+mix phx.new myapp --no-brunch --no-ecto
 cp -a /tmp/myapp/* /app
 cd -
 
@@ -27,4 +27,4 @@ config/prod.exs
 mix deps.get
 
 # run phoenix
-mix phoenix.server
+mix phx.server

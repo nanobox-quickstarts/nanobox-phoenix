@@ -1,4 +1,4 @@
-defmodule Myapp.ChannelCase do
+defmodule MyappWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -22,12 +22,11 @@ defmodule Myapp.ChannelCase do
 
 
       # The default endpoint for testing
-      @endpoint Myapp.Endpoint
+      @endpoint MyappWeb.Endpoint
     end
   end
 
-  setup tags do
-
+  setup _tags do
     :ok
   end
 end

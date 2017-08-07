@@ -2,7 +2,7 @@
 
 # Phoenix from scratch
 
-Run a Phoenix app locally, install nothing besides nanobox. 
+Run a Phoenix app locally, install nothing besides nanobox.
 
 <a href="https://nanobox.io/download"><img src="https://guides.nanobox.io/assets/quickstart-icons/download.png" /></a>
 
@@ -24,7 +24,7 @@ cd nanobox-phoenix
 nanobox dns add local phoenix.dev
 
 # Run phoenix
-nanobox run mix phoenix.server
+nanobox run mix phx.server
 ```
 
 ## Check it out
