@@ -33,7 +33,7 @@ cp quickstart/static/index.html.eex lib/app_web/templates/page/index.html.eex
 # Load node dependencies and brunch build
 cd assets
 npm install
-brunch build
+node_modules/brunch/bin/brunch build
 cd ../
 
 # Update the database connection in config files
@@ -45,16 +45,14 @@ s/^\s hostname.*$/  hostname: System.get_env(\"DATA_DB_HOST\"),/g;
 " config/{dev.exs,test.exs,prod.secret.exs}
 
 # Update prod.secret.exs with database hostname
-sed -i "/database:.*$/a \  hostname: System.get_env(\"DATA_DB_HOST\"),/g;" config/prod.secret.exs
+sed -i "/database:.*$/a \  hostname: System.get_env(\"DATA_DB_HOST\")," config/prod.secret.exs
 
 # Update prod.exs to listen on 8080
 sed -i "/^config :app, AppWeb.Endpoint,/a \  http: [port: 8080]," config/prod.exs
 
-# Create database structure
-mix ecto.create
-
-# Remove boxfile comments quickstart extra_step and
-sed -e "1,3d; 19,20d" boxfile.yml
-
-# Uncomment npm install extra_step
-sed -i "s/# - cd assets.*$/- cd assets && npm install/" boxfile.yml
+# Remove comments and quickstart extra_step from the boxfile.yml
+sed -i -e "
+1,4d;
+19,20d;
+s/# - cd assets.*$/- cd assets \&\& npm install/g;
+" boxfile.yml
