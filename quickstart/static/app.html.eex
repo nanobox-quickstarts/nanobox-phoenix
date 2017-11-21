@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='ie=edge' http-equiv='x-ua-compatible'>
+    <meta content='width=device-width, initial-scale=1, shrink-to-fit=no' name='viewport'>
+    <title>Phoenix Running with Nanobox</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link rel="shortcut icon" href="<%= static_path(@conn, "/images/favicon.png") %>" type="image/png">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'>
+  </head>
+  <body>
+    <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+    <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+    <div class='wrapper'>
+      <%= render @view_module, @view_template, assigns %>
+    </div>
+  </body>
+</html>
