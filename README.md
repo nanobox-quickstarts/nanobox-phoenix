@@ -55,7 +55,7 @@ When Nanobox starts, it will run the quickstart install script as part of the bu
 2. Updates database connections to use the auto-generated environment variables.
 3. Sets the production app endpoint port to 8080.
 
-For the full details, you can take a look at [`quickstart/install.sh`](https://github.com/nanobox-quickstarts/nanobox-phoenix/blob/master/quickstart/install.sh).
+For the full details, you can take a look at [`quickstart/install.sh`](quickstart/install.sh).
 
 ## Now What?
 For more details about running Phoenix apps with Nanobox, visit [Nanobox Phoenix Guides](https://guides.nanobox.io/elixir/phoenix/).
