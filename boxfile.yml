@@ -22,8 +22,9 @@ run.config:
 
 deploy.config:
   extra_steps:
-    - brunch build --production ./assets
     - mix phx.digest
+  transform:
+    - brunch build --production ./assets
   before_live:
     web.site:
       - mix ecto.create --quiet
@@ -31,8 +32,6 @@ deploy.config:
 
 web.site:
   start: node-start mix phx.server
-  writable_dirs:
-    - _build/prod/lib/tzdata/priv
 
 data.db:
   image: nanobox/postgresql:9.6
