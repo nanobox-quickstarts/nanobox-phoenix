@@ -1,5 +1,37 @@
+# This boxfile.yml is designed to generate a Phoenix project when first run.
+# If you have an existing Phoenix project and are using this as a template,
+# Remove lines 19 and 20 and uncomment 'cd assets && npm install'
+
 run.config:
   engine: elixir
-
   dev_packages:
     - inotify-tools
+    - nodejs
+  fs_watch: true
+  cache_dirs:
+    - assets/node_modules
+  extra_path_dirs:
+    - assets/node_modules/.bin
+    - assets/node_modules/brunch/bin/
+  build_triggers:
+    - assets/package.json
+  extra_steps:
+    # Run the quickstart script and generate a new Phoenix project
+    - bash quickstart/install.sh && rm -rf quickstart
+    # - cd assets && npm install
+
+deploy.config:
+  extra_steps:
+    - mix phx.digest
+  transform:
+    - brunch build --production ./assets
+  before_live:
+    web.site:
+      - mix ecto.create --quiet
+      - mix ecto.migrate
+
+web.site:
+  start: node-start mix phx.server
+
+data.db:
+  image: nanobox/postgresql:9.6

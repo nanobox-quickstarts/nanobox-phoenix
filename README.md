@@ -1,13 +1,10 @@
 ![Phoenix from scratch](https://guides.nanobox.io/assets/quickstart-icons/phoenix.png)
 
-# Phoenix from scratch
-
-Run a Phoenix app locally, install nothing besides nanobox.
+This is a Phoenix quickstart provided by Nanobox that will generate a brand new Phoenix project and configure it for Nanobox. To run the quickstart locally, download and install Nanobox.
 
 <a href="https://nanobox.io/download"><img src="https://guides.nanobox.io/assets/quickstart-icons/download.png" /></a>
 
-
-## Clone the repo
+## Clone the Repo
 
 ```bash
 # clone the code
@@ -17,19 +14,19 @@ git clone https://github.com/nanobox-quickstarts/nanobox-phoenix.git
 cd nanobox-phoenix
 ```
 
-## Run the app
+## Run the Quickstart
 
 ```bash
 # Add a convenient way to access your app from the browser
-nanobox dns add local phoenix.dev
+nanobox dns add local phx.local
 
 # Run phoenix
 nanobox run mix phx.server
 ```
 
-## Check it out
+## Check It Out
 
-Visit your app at <a href="http://phoenix.dev" target="\_blank">phoenix.dev</a>
+Visit your app at <a href="http://phx.local:4000" target="\_blank">phx.local:4000</a>
 
 ## Explore
 With Nanobox, you have everything you need develop and run your phoenix app:
@@ -51,7 +48,16 @@ ls
 exit
 ```
 
+## What Does This Quickstart Do?
+When Nanobox starts, it will run the quickstart install script as part of the build process which does the following:
+
+1. Downloads the phx_new package and generates a new Phoenix project.
+2. Updates database connections to use the auto-generated environment variables.
+3. Sets the production app endpoint port to 8080.
+
+For the full details, you can take a look at [`quickstart/install.sh`](quickstart/install.sh).
+
 ## Now What?
-For more details about running phoenix apps with nanobox visit [guides.nanobox.io/elixir/phoenix/](https://guides.nanobox.io/elixir/phoenix/)
+For more details about running Phoenix apps with Nanobox, visit [Nanobox Phoenix Guides](https://guides.nanobox.io/elixir/phoenix/).
 
 <a href="https://nanobox.io"><img src="https://guides.nanobox.io/assets/quickstart-icons/footer.png" /></a>
