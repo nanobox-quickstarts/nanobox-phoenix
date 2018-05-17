@@ -21,7 +21,7 @@ cd nanobox-phoenix
 
 ```bash
 # Add a convenient way to access your app from the browser
-nanobox dns add local phoenix.dev
+nanobox dns add local phoenix.local
 
 # Run phoenix
 nanobox run mix phx.server
@@ -29,7 +29,7 @@ nanobox run mix phx.server
 
 ## Check it out
 
-Visit your app at <a href="http://phoenix.dev" target="\_blank">phoenix.dev</a>
+Visit your app at <a href="http://phoenix.local" target="\_blank">phoenix.local</a>
 
 ## Explore
 With Nanobox, you have everything you need develop and run your phoenix app:
