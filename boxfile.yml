@@ -9,7 +9,6 @@ run.config:
   dev_packages:
     - nodejs
     - inotify-tools
-    - python-2.7.14 # for sass-brunch
 
   cache_dirs:
     - node_modules
