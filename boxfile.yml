@@ -33,8 +33,3 @@ deploy.config:
   # generate the static assets digest
   extra_steps:
     - mix phx.digest
-  # just before the new process comes online, migrate the database
-  before_live:
-    web.main:
-      - mix ecto.create --quiet
-      - mix ecto.migrate
