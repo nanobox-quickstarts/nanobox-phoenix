@@ -1,5 +1,40 @@
 run.config:
   engine: elixir
+  engine.config:
+    runtime: elixir-1.7
+    erlang_runtime: erlang-21
+
+  # we need nodejs in development
+  # ensure inotify exists for hot-code reloading
+  dev_packages:
+    - nodejs
+    - inotify-tools
+    - python-2.7.14 # for sass-brunch
+
+  cache_dirs:
+    - node_modules
+
+  # add node_module bins to the $PATH
+  extra_path_dirs:
+    - node_modules/.bin
 
   dev_packages:
     - inotify-tools
+
+  fs_watch: true
+
+####################
+# Production config
+####################
+web.main:
+  start: node-start mix phx.server
+
+deploy.config:
+  # generate the static assets digest
+  extra_steps:
+    - mix phx.digest
+  # just before the new process comes online, migrate the database
+  before_live:
+    web.main:
+      - mix ecto.create --quiet
+      - mix ecto.migrate
