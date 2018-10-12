@@ -17,9 +17,6 @@ run.config:
   extra_path_dirs:
     - node_modules/.bin
 
-  dev_packages:
-    - inotify-tools
-
   fs_watch: true
 
 ####################
